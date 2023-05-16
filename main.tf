@@ -25,7 +25,7 @@ resource "tls_private_key" "ssh" {
 #}
 
 resource "ibm_compute_ssh_key" "project" {
-  label      = "${var.project}-sshkey"
+  label      = "${var.project}-sshkey-bms"
   public_key = tls_private_key.ssh.public_key_openssh
   tags       = local.tags
 }
