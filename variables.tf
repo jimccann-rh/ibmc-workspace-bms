@@ -36,7 +36,7 @@ variable "domain_name" {
   default     = "example.com"
 }
 
-variable "bmc_private_vlan" {
+variable "bms_private_vlan" {
   description = "Private VLAN of BMS systems"
   type        = string
   default     = ""
