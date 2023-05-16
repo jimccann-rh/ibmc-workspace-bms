@@ -1,0 +1,38 @@
+# Ignore all .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Ignore all .tfvars files
+*.tfvars
+*.tfvars.json
+
+# Ignore all .tfplan files
+*.tfplan
+
+# Ignore all .terraform files
+*.terraform
+
+# Ignore all .terraform.lock.hcl files
+*.terraform.lock.hcl
+
+# Ignore all .tfignore files
+*.tfignore
+
+# Ignore all .tfenv files
+*.tfenv
+
+# Ignore all .tfvars.d directories
+**/.tfvars.d
+
+# Ignore all .terraform.d directories
+**/.terraform.d
+
+# Ignore all .terraform.lock.hcl.d directories
+**/.terraform.lock.hcl.d
+
+# Ignore all .tfignore.d directories
+**/.tfignore.d
+
+# Ignore all .tfenv.d directories
+**/.tfenv.d
+
