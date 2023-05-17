@@ -17,12 +17,36 @@ resource "ibm_compute_bare_metal" "host" {
   private_vlan_id        = var.private_vlan
   tags                   = var.tags
   redundant_power_supply = true
-  storage_groups {
-    # RAID 1
-    array_type_id = 2
-    # Use the first two disks
-    hard_drives = [0, 1]
-    array_size  = 960
 
-  }
+  storage_groups { 
+      # RAID 1
+      array_type_id = 2
+  
+      # Use two disks
+      hard_drives = [0, 1]
+      array_size  = 960
+}
+  storage_groups {
+      # individual "vsan cache"
+      array_type_id = 21
+  
+      # Use two disks
+      hard_drives = [2, 3]
+}
+  storage_groups {
+      # individual "vsan capacity"
+      array_type_id = 21
+  
+      # Use six disks
+      hard_drives = [4, 5, 6, 7, 8, 9]
+}
+
+#  storage_groups {
+#    # RAID 1
+#    array_type_id = 2
+#    # Use the first two disks
+#    hard_drives = [0, 1]
+#    array_size  = 960
+#
+#  }
 }
