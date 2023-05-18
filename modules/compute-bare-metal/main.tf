@@ -2,8 +2,8 @@ resource "ibm_compute_bare_metal" "host" {
   package_key_name       = "DUAL_INTEL_XEON_PROC_CASCADE_LAKE_SCALABLE_FAMILY_12_DRIVES"
   process_key_name       = "INTEL_INTEL_XEON_8260_2_40"
   memory                 = 768
-  os_key_name            = "OS_VMWARE_SERVER_VIRTUALIZATION_7_0_UPDATE_3I_UEFI"
-  #os_key_name            = "OS_NO_OPERATING_SYSTEM"
+  #os_key_name            = "OS_VMWARE_SERVER_VIRTUALIZATION_7_0_UPDATE_3I_UEFI"
+  os_key_name            = "OS_NO_OPERATING_SYSTEM"
   hostname               = var.name
   domain                 = var.domain_name
   datacenter             = var.datacenter
