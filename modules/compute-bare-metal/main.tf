@@ -10,7 +10,7 @@ resource "ibm_compute_bare_metal" "host" {
   network_speed          = var.network_speed
   public_bandwidth       = 20000
   disk_key_names         = ["HARD_DRIVE_1_00_TB_SATA_2", "HARD_DRIVE_1_00_TB_SATA_2", "HARD_DRIVE_960GB_SSD", "HARD_DRIVE_960GB_SSD", "HARD_DRIVE_3_8TB_SSD_3DWPD", "HARD_DRIVE_3_8TB_SSD_3DWPD", "HARD_DRIVE_3_8TB_SSD_3DWPD", "HARD_DRIVE_3_8TB_SSD_3DWPD", "HARD_DRIVE_3_8TB_SSD_3DWPD", "HARD_DRIVE_3_8TB_SSD_3DWPD"]
-  hourly_billing         = false
+  hourly_billing         = true
   private_network_only   = false
   unbonded_network       = true
   public_vlan_id         = var.public_vlan
