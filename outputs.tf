@@ -18,3 +18,6 @@ output "bare_metal_host_private_ips" {
   value       = module.bare-metal-hosts[*].host_private_ipv4_address
 }
 
+output "first_ip_address" {
+  value = cidrhost(ibm_subnet.management_subnet.subnet_cidr,1)
+}

@@ -15,14 +15,14 @@ resource "tls_private_key" "ssh" {
   rsa_bits  = 4096
 }
 
-#resource "null_resource" "create_private_key" {
-#  provisioner "local-exec" {
-#    command = <<-EOT
-#      echo '${tls_private_key.ssh.private_key_pem}' > ./'${var.project}'.pem
-#      chmod 400 ./'${var.project}'.pem
-#    EOT
-#  }
-#}
+resource "null_resource" "create_private_key" {
+  provisioner "local-exec" {
+    command = <<-EOT
+      echo '${tls_private_key.ssh.private_key_pem}' > ./'${var.project}'.pem
+      chmod 400 ./'${var.project}'.pem
+    EOT
+  }
+}
 
 resource "ibm_compute_ssh_key" "project" {
   label      = "${var.project}-sshkey-bms"
@@ -50,6 +50,21 @@ resource "ibm_compute_ssh_key" "project" {
 #  domain                 = var.domain_name
 #  datacenter             = var.datacenter
 #}
+
+resource "ibm_subnet" "management_subnet" {
+  type       = "Portable"
+  private    = true
+  ip_version = 4
+  capacity   = 64
+  vlan_id    = var.bms_private_vlan 
+  notes      = "vsphere management"
+  tags         = local.tags
+
+  timeouts {
+    create = "45m"
+  }
+}
+
 
 module "bare-metal-hosts" {
   count        = var.host_count
