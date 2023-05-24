@@ -38,8 +38,7 @@ variable "domain_name" {
 
 variable "bms_private_vlan" {
   description = "Private VLAN of BMS systems"
-  type        = string
-  default     = ""
+  type        = integer
 }
 
 variable "bms_private_subnet" {
@@ -51,8 +50,7 @@ variable "bms_private_subnet" {
 
 variable "bms_public_vlan" {
   description = "Public VLAN of BMS systems"
-  type        = string
-  default     = ""
+  type        = integer
 }
 
 variable "bms_public_subnet" {
