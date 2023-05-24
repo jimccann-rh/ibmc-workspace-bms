@@ -9,7 +9,7 @@ resource "ibm_compute_bare_metal" "host" {
   datacenter             = var.datacenter
   network_speed          = var.network_speed
   public_bandwidth       = 20000
-  disk_key_names         = ["HARD_DRIVE_1_00_TB_SATA_2", "HARD_DRIVE_1_00_TB_SATA_2", "HARD_DRIVE_960GB_SSD", "HARD_DRIVE_960GB_SSD", "HARD_DRIVE_3_8TB_SSD_3DWPD", "HARD_DRIVE_3_8TB_SSD_3DWPD", "HARD_DRIVE_3_8TB_SSD_3DWPD", "HARD_DRIVE_3_8TB_SSD_3DWPD", "HARD_DRIVE_3_8TB_SSD_3DWPD", "HARD_DRIVE_3_8TB_SSD_3DWPD"]
+  disk_key_names         = ["HARD_DRIVE_1_00_TB_SATA_2", "HARD_DRIVE_1_00_TB_SATA_2", "HARD_DRIVE_7_6TB_NVME_SSD_U_2", "HARD_DRIVE_7_6TB_NVME_SSD_U_2", "HARD_DRIVE_7_6TB_NVME_SSD_U_2", "HARD_DRIVE_7_6TB_NVME_SSD_U_2"]
   hourly_billing         = false
   private_network_only   = false
   unbonded_network       = true
@@ -26,6 +26,12 @@ resource "ibm_compute_bare_metal" "host" {
       hard_drives = [0, 1]
       array_size  = 960
 }
+
+
+
+#  disk_key_names         = ["HARD_DRIVE_1_00_TB_SATA_2", "HARD_DRIVE_1_00_TB_SATA_2", "HARD_DRIVE_960GB_SSD", "HARD_DRIVE_960GB_SSD", "HARD_DRIVE_3_8TB_SSD_3DWPD", "HARD_DRIVE_3_8TB_SSD_3DWPD", "HARD_DRIVE_3_8TB_SSD_3DWPD", "HARD_DRIVE_3_8TB_SSD_3DWPD", "HARD_DRIVE_3_8TB_SSD_3DWPD", "HARD_DRIVE_3_8TB_SSD_3DWPD"]
+
+
 #  storage_groups {
 #      # individual "vsan cache"
 #      array_type_id = 21
