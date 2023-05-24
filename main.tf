@@ -58,7 +58,7 @@ resource "ibm_subnet" "management_subnet" {
   capacity   = 64
   vlan_id    = var.bms_private_vlan 
   notes      = "vsphere management"
-  tags         = local.tags
+  tags       = local.tags
 
   timeouts {
     create = "45m"
