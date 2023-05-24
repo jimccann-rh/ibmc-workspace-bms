@@ -12,9 +12,11 @@ resource "ibm_compute_bare_metal" "host" {
   disk_key_names         = ["HARD_DRIVE_1_00_TB_SATA_2", "HARD_DRIVE_1_00_TB_SATA_2", "HARD_DRIVE_7_6TB_NVME_SSD_U_2", "HARD_DRIVE_7_6TB_NVME_SSD_U_2", "HARD_DRIVE_7_6TB_NVME_SSD_U_2", "HARD_DRIVE_7_6TB_NVME_SSD_U_2"]
   hourly_billing         = false
   private_network_only   = false
-  unbonded_network       = true
+  unbonded_network       = true 
   public_vlan_id         = var.public_vlan
+  public_subnet          = var.public_subnet
   private_vlan_id        = var.private_vlan
+  private_subnet         = var.private_subnet
   tags                   = var.tags
   redundant_power_supply = true
 

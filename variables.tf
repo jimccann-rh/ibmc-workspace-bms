@@ -42,8 +42,21 @@ variable "bms_private_vlan" {
   default     = ""
 }
 
+variable "bms_private_subnet" {
+  description = "Private subnet of BMS systems"
+  type        = string
+  default     = ""
+}
+
+
 variable "bms_public_vlan" {
   description = "Public VLAN of BMS systems"
+  type        = string
+  default     = ""
+}
+
+variable "bms_public_subnet" {
+  description = "Public subnet of BMS systems"
   type        = string
   default     = ""
 }
